@@ -1,0 +1,126 @@
+/* pages/ocrshow/ocrshow.wxss */
+.all{
+  height: 100vh;
+  display: flex;
+}
+.img{
+  width: 100%;
+  overflow-y: scroll;
+  padding-bottom: 266rpx;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+.imgA{
+  width: 750rpx;
+}
+.loading{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+	background: 
+	linear-gradient(#1acaa4, #1aca9e),
+	linear-gradient(90deg, #ffffff33 1px,transparent 0,transparent 19px),
+	linear-gradient( #ffffff33 1px,transparent 0,transparent 19px),
+	linear-gradient(transparent, #1aca78);
+	background-size:100% 0.3%, 10% 100%,100% 5%, 100% 100%;
+	background-repeat:no-repeat, repeat, repeat, no-repeat;
+	background-position: 0% 0%, 0 0, 0 0, 0 0;
+	/* 初始位置 */
+	clip-path: polygon(0% 0%, 100% 0%, 100% 1.5%, 0% 1.5%);
+  animation: move 1s infinite linear;
+  z-index: 2;
+}
+@keyframes move{
+  to{
+    background-position: 0 100%,0 0, 0 0,0 0;
+    /* 终止位置 */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.preview{
+  width: 720rpx;
+  height: 420rpx;
+  position: absolute;
+  bottom: 100rpx;
+  margin: 6rpx 15rpx 46rpx;
+  transition: bottom .4s ease;
+  z-index: 9;
+}
+.preview_title{
+  width: 106rpx;
+  height: 50rpx;
+  background: rgba(0, 0, 0,0.5);
+  border-radius: 8rpx 8rpx 0 0;
+  position: absolute;
+  right: 14rpx;
+  top: -50rpx;
+  color: #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+}
+.icon-xiajiantou{
+  font-size: 24rpx;
+}
+.preview_content{
+  height: 420rpx;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12rpx;
+  overflow-y: scroll;
+  border-radius: 16rpx;
+}
+.contentBox{
+  width: 100%;
+  padding: 16rpx 12rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.preview_hidden{
+  bottom: -326rpx;
+}
+.titleR{
+  transform: rotate(180deg);
+}
+.set{
+  width: 750rpx;
+  height: 120rpx;
+  background: rgba(0, 0, 0, 1);
+  position: absolute;
+  bottom: 0;
+  border-radius: 10rpx 10rpx 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9;
+}
+.copy,.check{
+  width: 365rpx;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 29rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copy::before{
+  content: "";
+  position: absolute;
+  left: 365rpx;
+  width: 1rpx;
+  height: 24rpx;
+  background: #fff;
+}
+.icon-fuzhi,.icon-quanxuan{
+  margin-right: 4rpx;
+}
+.position{
+  border: 1rpx solid #1acaa4;
+  position: absolute;
+}
+.select_show{
+  background-color: rgba(28, 201, 158, 0.5);
+}

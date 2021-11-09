@@ -1,0 +1,27 @@
+<view class="img j-c">
+  <image mode="widthFix" src="/image/a1.png"></image>
+</view>
+<view class="text">一款免费的图片转文字小程序</view>
+<view class="photoBtn j-c" bindtap="takePhotos">
+  <view class="iconfont icon-xiangji1"></view>立即拍摄
+</view>
+<view class="other">
+  <view class="album j-c" bindtap="album">
+    <view class="iconfont icon-xiangce"></view>相册图片
+  </view>
+  <view class="msg j-c" bindtap="phpotoMsg">
+    <view class="iconfont icon-xiaoxi"></view>聊天图片
+  </view>
+</view>
+
+<view class="about flex">
+  <view class="about-c" bindtap="about">
+    <view class="iconfont icon-guanyu"></view>
+    <view>关于</view>
+  </view>
+  <view class="about-c">
+    <view class="iconfont icon-fenxiang"></view>
+    <view>分享</view>
+    <button class="_button" open-type="share"></button>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/ocrshow/ocrshow.wxml-->
+<view class="all">
+  <view class="loading" wx:if="{{loading}}"></view>
+  <view class="img">
+    <image class="imgA" mode="widthFix" src="{{ocrImg}}"></image>
+    <view class="position {{item.isHidden? 'select_show':''}}" wx:for="{{ocrContent}}" wx:key="index" style="width:{{item.location.width/l}}px; height:{{item.location.height/l}}px;top:{{item.location.top/l}}px; left:{{item.location.left/l}}px;" data-index="{{index}}" bindtap="select"></view>
+  </view>
+  <view class="preview {{slide? '':'preview_hidden'}}" wx:if="{{setShow}}">
+    <view bindtap="slideBtn" class="preview_title">预览<view class="iconfont icon-xiajiantou {{slide? '':'titleR'}}"></view>
+    </view>
+    <view class="preview_content">
+      <view class="contentBox" wx:for="{{ocrContent}}" wx:key="index" wx:if="{{item.isHidden}}">
+        {{item.words}}
+      </view>
+    </view>
+  </view>
+  <view class="set" wx:if="{{setShow}}">
+    <view class="copy" bindtap="copyAll" ><view class="iconfont icon-fuzhi"></view>一键复制</view>
+    <view class="check" bindtap="selectAll"><view class="iconfont icon-quanxuan"></view>全选</view>
+  </view>
+</view>

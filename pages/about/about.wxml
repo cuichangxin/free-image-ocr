@@ -1,0 +1,18 @@
+<!--pages/about/about.wxml-->
+<view class="wrap">
+  <view class="box">
+    <view class="flex-c">
+      <view class="ac">#</view>
+      <view class="title">关于传图识字转化</view>
+    </view>
+    <view class="content">只是一个简单的文字识别工具，使用完全免费，无广告，请放心使用。</view>
+  </view>
+  <view class="box">
+    <view class="flex-c">
+      <view class="ac">#</view>
+      <view class="title">其他</view>
+    </view>
+    <view class="content">在使用的过程中遇到任何问题，或是想提出建议和反馈，请点击下方按钮联系我。</view>
+  </view>
+  <view class="button" bindtap="contact">联系我</view>
+</view>

@@ -1,19 +1,33 @@
 // app.js
+const service = require('./utils/service/api')
 App({
   onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    wx.cloud.init({
+      env: "cloud1-0gd8ic0b23f05a3f"
+    });
+    service.token({}).then(res => {
+      if (res) {
+        wx.setStorageSync('Token', res)
       }
     })
+    var d = wx.getSystemInfoSync().windowWidth / 750
+    this.globalData.widthW = d
   },
-  globalData: {
-    userInfo: null
+  showLoading: function () {
+    wx.showLoading({
+      title: "加载中",
+      mask: true
+    });
+  },
+  showToast: function (msg, mask, duration) {
+    wx.showToast({
+      title: msg,
+      icon: "none",
+      duration: duration || 2000,
+      mask: mask
+    });
+  },
+  globalData:{
+    widthW:null
   }
 })

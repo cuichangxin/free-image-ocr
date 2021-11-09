@@ -1,10 +1,96 @@
 /**app.wxss**/
-.container {
-  height: 100%;
+page {
+  font-size: 28rpx;
+  background: #fff;
+}
+
+view,
+image {
+  padding: 0;
+  margin: 0;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
+}
+
+.flex-c {
+  display: flex;
+  align-items: center;
+}
+
+.j-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.j-s {
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+.cc {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@font-face {
+  font-family: 'iconfont';  /* Project id 2914564 */
+  src: url('//at.alicdn.com/t/font_2914564_0rn73e0730gj.woff2?t=1636100123992') format('woff2'),
+       url('//at.alicdn.com/t/font_2914564_0rn73e0730gj.woff?t=1636100123992') format('woff'),
+       url('//at.alicdn.com/t/font_2914564_0rn73e0730gj.ttf?t=1636100123992') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fenxiang:before {
+  content: "\e739";
+}
+
+.icon-xiangji1:before {
+  content: "\e77f";
+}
+
+.icon-guanyu:before {
+  content: "\e655";
+}
+
+.icon-xiaoxi:before {
+  content: "\e73c";
+}
+
+.icon-xiangce:before {
+  content: "\e612";
+}
+.icon-xiajiantou:before {
+  content: "\e60c";
+}
+.icon-quanxuan:before{
+  content: "\e61a";
+}
+.icon-fuzhi:before{
+  content: "\e606";
+}
