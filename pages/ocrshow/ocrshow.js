@@ -68,29 +68,29 @@ Page({
   },
   copyAll() {
     try {
-    let s = this.data.ocrContent.some(item=>item.isHidden == true)
-    if (s == false){
-      app.showToast('没有内容可以复制')
-    }else{
-      var arr = []
-      this.data.ocrContent.map(function (t) {
-        if (t.isHidden !== false) {
-          arr.push(t.words)
-        }
-      })
-      let data = arr.reduce(function (t, e) {
-        return t + "\n" + e
-      })
-      wx.setClipboardData({
-        data: data,
-        success(res) {
-          console.log(res);
-        },
-        fail(err) {
-          app.showToast('复制失败')
-        }
-      })
-    }
+      let s = this.data.ocrContent.some(item => item.isHidden == true)
+      if (s == false) {
+        app.showToast('没有内容可以复制')
+      } else {
+        var arr = []
+        this.data.ocrContent.map(function (t) {
+          if (t.isHidden !== false) {
+            arr.push(t.words)
+          }
+        })
+        let data = arr.reduce(function (t, e) {
+          return t + "\n" + e
+        })
+        wx.setClipboardData({
+          data: data,
+          success(res) {
+            console.log(res);
+          },
+          fail(err) {
+            app.showToast('复制失败')
+          }
+        })
+      }
     } catch (err) {
       console.log(err);
     }

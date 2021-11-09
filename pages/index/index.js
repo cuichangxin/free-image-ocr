@@ -109,5 +109,11 @@ Page({
       title:'一款简单好用的传图识字小程序',
       path:'/pages/index/index'
     }
+  },
+  onShareTimeline:function(){
+    return{
+      title:'一款简单好用的传图识字小程序',
+      path:'/pages/index/index'
+    }
   }
 })
