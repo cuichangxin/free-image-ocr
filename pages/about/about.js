@@ -9,7 +9,7 @@ Page({
   },
   contact(){
     wx.previewImage({
-      urls: ['https://i.postimg.cc/MKsv2csM/Wechat-IMG129.jpg'],
+      urls: ['https://inews.gtimg.com/newsapp_ls/0/14157969699/0.jpeg'],
     })
   },
 
