@@ -19,9 +19,7 @@ Page({
    */
   onLoad: function (options) {
     var _this = this
-    const {
-      access_token
-    } = wx.getStorageSync('Token')
+    const {access_token} = wx.getStorageSync('Token')
     const imgUrl = wx.getStorageSync('imgUrl')
     const localImg = wx.getStorageSync('localImg')
     wx.request({ // 识别图片
@@ -36,7 +34,7 @@ Page({
         paragraph: true
       },
       success(res) {
-        res.data.words_result.map(function(r){
+        res.data.words_result.map(function (r) {
           r.isHidden = true
         })
         _this.setData({
@@ -69,12 +67,14 @@ Page({
     })
   },
   copyAll() {
-    if (this.data.ocrContent.length == 0) {
+    try {
+    let s = this.data.ocrContent.some(item=>item.isHidden == true)
+    if (s == false){
       app.showToast('没有内容可以复制')
-    } else {
+    }else{
       var arr = []
       this.data.ocrContent.map(function (t) {
-        if (t.isHidden !== false){
+        if (t.isHidden !== false) {
           arr.push(t.words)
         }
       })
@@ -91,24 +91,29 @@ Page({
         }
       })
     }
+    } catch (err) {
+      console.log(err);
+    }
   },
-  select(e){
+  select(e) {
     var ocrData = this.data.ocrContent,
-        a = e.currentTarget.dataset.index;
+      a = e.currentTarget.dataset.index;
     ocrData[a].isHidden = !ocrData[a].isHidden
     this.setData({
-      ocrContent:ocrData
+      ocrContent: ocrData
     })
   },
-  selectAll(){
+  selectAll() {
     var a = new Array()
-    this.data.ocrContent.forEach(function(t){
-      if (t.isHidden == false){
+    this.data.ocrContent.forEach(function (t) {
+      if (t.isHidden == false) {
         t.isHidden = true
       }
       a.push(t)
     })
-    this.setData({ocrContent:a})
+    this.setData({
+      ocrContent: a
+    })
   },
 
   onShareAppMessage: function () {
