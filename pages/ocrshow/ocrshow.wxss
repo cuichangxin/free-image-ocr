@@ -1,4 +1,7 @@
 /* pages/ocrshow/ocrshow.wxss */
+page{
+  overflow: hidden;
+}
 .all{
   height: 100vh;
   display: flex;
